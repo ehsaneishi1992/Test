@@ -10,7 +10,7 @@ import "./Sidebar.scss";
 import { ReactComponent as Logo } from "../../assets/icons/SpecReady.svg";
 
 export default function Sidebar(props) {
-  const {} = props;
+  const { } = props;
 
   return (
     <aside className="w-80 min-h-screen bg-app px-4 text-secondary">
