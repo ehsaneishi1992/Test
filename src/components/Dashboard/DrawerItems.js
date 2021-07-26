@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             backgroundColor: general.cbackgroundColorHover,
             color: "white",
-
             "& .MuiListItemIcon-root": {
                 color: "white"
             },

@@ -5,38 +5,23 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import Badge from '@material-ui/core/Badge';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import InputBase from '@material-ui/core/InputBase';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import Avatar from '@material-ui/core/Avatar';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import Hidden from '@material-ui/core/Hidden';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 // general
 import { general } from "./General";
-// react components for routing our app without refresh
-//import { useHistory } from "react-router-dom";
-// notistack
-// import { useSnackbar } from 'notistack';
-// DrawerItems
+
 import { MainListItems } from './DrawerItems';
 ///
 import avatarImage from "../../assets/icons/SpecReady.svg";
-const drawerWidth = 240;
+const drawerWidth = 310;
 const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
@@ -88,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             display: 'flex',
         },
+        paddingBottom: "25px"
     },
     sectionMobile: {
         display: 'flex',
@@ -188,8 +174,8 @@ export const DrawerAndAppBar = (props) => {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem >پروفایل</MenuItem>
-            <MenuItem >خروج</MenuItem>
+            <MenuItem >Profile</MenuItem>
+            <MenuItem >Exit</MenuItem>
         </Menu>
     );
 
@@ -204,22 +190,6 @@ export const DrawerAndAppBar = (props) => {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            {/* <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <p>پیام ها</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <Badge badgeContent={11} color="secondary">
-                        <NotificationsIcon />
-                    </Badge>
-                </IconButton>
-                <p>اعلان ها</p>
-            </MenuItem> */}
             <MenuItem >
                 <IconButton
                     aria-label="account of current user"
@@ -227,21 +197,10 @@ export const DrawerAndAppBar = (props) => {
                     aria-haspopup="true"
                     color="inherit"
                 >
-                    <AccountCircle />
+                    <ExpandMoreIcon />
                 </IconButton>
-                <p>پروفایل</p>
+                <p>Profile</p>
             </MenuItem>
-            {/* <MenuItem onClick={() => exit()}>
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <ExitToAppIcon />
-                </IconButton>
-                <p>خروج</p>
-            </MenuItem> */}
         </Menu>
     );
     /////////////////////////////////////////////////////////////
@@ -260,32 +219,8 @@ export const DrawerAndAppBar = (props) => {
                         >
                             <MenuIcon />
                         </IconButton>
-                        {/* <Typography variant="h7" noWrap>{props.title}</Typography> */}
-                        {/* <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon />
-                            </div>
-                            <InputBase
-                                placeholder="Search…"
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </div> */}
                         <div className={classes.grow} />
                         <div className={classes.sectionDesktop}>
-                            {/* <IconButton aria-label="show 4 new mails" color="inherit">
-                                <Badge badgeContent={4} color="secondary">
-                                    <MailIcon />
-                                </Badge>
-                            </IconButton>
-                            <IconButton aria-label="show 17 new notifications" color="inherit">
-                                <Badge badgeContent={17} color="secondary">
-                                    <NotificationsIcon />
-                                </Badge>
-                            </IconButton> */}
                             <IconButton
                                 edge="end"
                                 aria-label="account of current user"
@@ -293,8 +228,9 @@ export const DrawerAndAppBar = (props) => {
                                 aria-haspopup="true"
                                 onMouseEnter={handleProfileMenuOpen}
                                 color="inherit"
+                                style={{ fontSize: "16px" }}
                             >
-                                <AccountCircle />
+                                Babak Arghavan<ExpandMoreIcon />
                             </IconButton>
                         </div>
                         <div className={classes.sectionMobile}>

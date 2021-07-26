@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
+const drawerWidth = 310;
 export const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) => ({
     content: {
         flexGrow: 1,
         padding: theme.spacing(1),
-        paddingLeft: theme.spacing(30),
+        paddingLeft: theme.spacing(40),
     },
     container: {
         paddingTop: theme.spacing(1),
